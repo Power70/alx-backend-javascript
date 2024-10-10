@@ -1,10 +1,15 @@
 /**
- * This function iterates through an array of student objects
- * and returns an array of student IDs.
- */
+ * Retrieves ids from a list of students.
+ * @param {{
+*   id: Number,
+*   firstName: String,
+*   location: String
+* }[]} students - The list of students.
+* @returns
+*/
 export default function getListStudentIds(students) {
-  if (!Array.isArray(students)) {
-    return [];
+  if (students instanceof Array) {
+    return students.map((student) => student.id);
   }
-  return students.map((student) => student.id);
+  return [];
 }
